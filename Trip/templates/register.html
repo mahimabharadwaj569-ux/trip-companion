@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.5),
+                    rgba(0, 0, 0, 0.5)),
+                url("https://images.unsplash.com/photo-1469474968028-56623f02e42e");
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            font-family: Arial, sans-serif;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .auth-card {
+            width: 400px;
+            padding: 30px;
+
+            background: white;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .auth-icon {
+            text-align: center;
+            font-size: 40px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .auth-card p {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 12px;
+
+            box-sizing: border-box;
+
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+
+            margin-top: 20px;
+
+            border: none;
+            border-radius: 8px;
+
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .green-btn {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .green-btn:hover {
+            background-color: #218838;
+        }
+
+        .bottom-text {
+            margin-top: 20px;
+        }
+
+        .bottom-text a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+
+            color: #333;
+            text-decoration: none;
+        }
+    </style>
+
+</head>
+
+
+<body class="auth-page">
+
+
+    <div class="auth-card register-card">
+
+
+        <div class="auth-icon">
+
+            📝
+
+        </div>
+
+
+        <h1>
+
+            Create Account
+
+        </h1>
+
+
+        <p>
+
+            Join Trip Companion and start your journey.
+
+        </p>
+
+
+        <!-- FLASH MESSAGE -->
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+
+
+        {% for category, message in messages %}
+
+
+        <div class="message {{ category }}">
+
+            {{ message }}
+
+        </div>
+
+
+        {% endfor %}
+
+
+        {% endwith %}
+
+
+        <!-- REGISTER FORM -->
+
+        <form method="POST" action="{{ url_for('register') }}">
+
+
+            <label>
+
+                👤 Full Name
+
+            </label>
+
+
+            <input type="text" name="name" placeholder="Enter your full name" required>
+
+
+            <label>
+
+                📧 Email Address
+
+            </label>
+
+
+            <input type="email" name="email" placeholder="Enter your email" required>
+
+
+            <label>
+
+                📱 Phone Number
+
+            </label>
+
+
+            <input type="text" name="phone" placeholder="Enter your phone number" required>
+
+
+            <label>
+
+                🔐 Password
+
+            </label>
+
+
+            <input type="password" name="password" placeholder="Create password" required>
+
+
+            <label>
+
+                🔐 Confirm Password
+
+            </label>
+
+
+            <input type="password" name="confirm_password" placeholder="Confirm password" required>
+
+
+            <label>
+
+                ❤️ Travel Preference
+
+            </label>
+
+
+            <select name="travel_preference" required>
+
+                <option value="">
+
+                    Select preference
+
+                </option>
+
+
+                <option value="Family">
+
+                    👨‍👩‍👧 Family
+
+                </option>
+
+
+                <option value="Friends">
+
+                    👫 Friends
+
+                </option>
+
+
+                <option value="Solo">
+
+                    🎒 Solo
+
+                </option>
+
+
+                <option value="Couple">
+
+                    💕 Couple
+
+                </option>
+
+            </select>
+
+
+            <button type="submit" class="btn green-btn">
+
+                🚀 Register
+
+            </button>
+
+
+        </form>
+
+
+        <p class="bottom-text">
+
+            Already have an account?
+
+
+            <a href="{{ url_for('login') }}">
+
+                Login
+
+            </a>
+
+        </p>
+
+
+        <a href="{{ url_for('home') }}" class="back-link">
+
+            ← Back to Home
+
+        </a>
+
+
+    </div>
+
+
+</body>
+
+</html>

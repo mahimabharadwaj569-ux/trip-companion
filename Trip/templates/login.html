@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login</title>
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+    <style>
+        body {
+
+            margin: 0;
+
+            padding: 0;
+
+            min-height: 100vh;
+
+
+            background:
+
+                linear-gradient(rgba(0, 0, 0, 0.45),
+
+                    rgba(0, 0, 0, 0.45)),
+
+                url("https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1");
+
+
+            background-size: cover;
+
+            background-position: center;
+
+            background-repeat: no-repeat;
+
+
+            font-family: Arial, sans-serif;
+
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+        }
+
+
+        .auth-card {
+
+            width: 400px;
+
+            padding: 30px;
+
+
+            background: rgba(255, 255, 255, 0.95);
+
+
+            border-radius: 15px;
+
+
+            box-shadow:
+
+                0 10px 30px rgba(0, 0, 0, 0.3);
+
+        }
+
+
+        .auth-icon {
+
+            text-align: center;
+
+            font-size: 40px;
+
+        }
+
+
+        h1 {
+
+            text-align: center;
+
+        }
+
+
+        .auth-card p {
+
+            text-align: center;
+
+        }
+
+
+        label {
+
+            display: block;
+
+            margin-top: 15px;
+
+            margin-bottom: 5px;
+
+            font-weight: bold;
+
+        }
+
+
+        input {
+
+            width: 100%;
+
+            padding: 12px;
+
+
+            box-sizing: border-box;
+
+
+            border: 1px solid #ccc;
+
+            border-radius: 8px;
+
+        }
+
+
+        input:focus {
+
+            outline: none;
+
+            border-color: #007bff;
+
+        }
+
+
+        .forgot-area {
+
+            text-align: right;
+
+            margin-top: 10px;
+
+        }
+
+
+        .forgot-area a {
+
+            color: #007bff;
+
+            text-decoration: none;
+
+        }
+
+
+        .forgot-area a:hover {
+
+            text-decoration: underline;
+
+        }
+
+
+        .submit-btn {
+
+            width: 100%;
+
+            background-color: #007bff;
+
+            color: white;
+
+
+            padding: 12px;
+
+
+            margin-top: 20px;
+
+
+            border: none;
+
+            border-radius: 8px;
+
+
+            font-size: 16px;
+
+            cursor: pointer;
+
+        }
+
+
+        .submit-btn:hover {
+
+            background-color: #0056b3;
+
+        }
+
+
+        .register-text {
+
+            text-align: center;
+
+            margin-top: 20px;
+
+        }
+
+
+        .register-text a {
+
+            color: #007bff;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+        }
+
+
+        .register-text a:hover {
+
+            text-decoration: underline;
+
+        }
+
+
+        .back-link {
+
+            display: block;
+
+            text-align: center;
+
+            margin-top: 15px;
+
+
+            color: #333;
+
+            text-decoration: none;
+
+        }
+
+
+        .back-link:hover {
+
+            text-decoration: underline;
+
+        }
+
+
+        .message {
+
+            padding: 10px;
+
+            margin: 10px 0;
+
+            border-radius: 6px;
+
+            text-align: center;
+
+        }
+    </style>
+
+</head>
+
+
+<body class="auth-page">
+
+
+    <div class="auth-card login-card">
+
+
+        <div class="auth-icon">
+
+            🔐
+
+        </div>
+
+
+        <h1>
+
+            Welcome Back
+
+        </h1>
+
+
+        <p>
+
+            Login to continue your travel journey.
+
+        </p>
+
+
+        <!-- FLASH MESSAGE -->
+
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+
+
+        {% for category, message in messages %}
+
+
+        <div class="message {{ category }}">
+
+            {{ message }}
+
+        </div>
+
+
+        {% endfor %}
+
+
+        {% endwith %}
+
+
+        <!-- LOGIN FORM -->
+
+
+        <form method="POST" action="{{ url_for('login') }}">
+
+
+            <label>
+
+                📧 Email Address
+
+            </label>
+
+
+            <input type="email" name="email" placeholder="Enter your email" required>
+
+
+            <label>
+
+                🔑 Password
+
+            </label>
+
+
+            <input type="password" name="password" placeholder="Enter your password" required>
+
+
+            <div class="forgot-area">
+
+
+                <a href="{{ url_for('forgot_password') }}">
+
+                    Forgot Password?
+
+                </a>
+
+
+            </div>
+
+
+            <button type="submit" class="submit-btn">
+
+                Submit
+
+            </button>
+
+
+        </form>
+
+
+        <p class="register-text">
+
+
+            Don't have an account?
+
+
+            <a href="{{ url_for('register') }}">
+
+                Create Account
+
+            </a>
+
+
+        </p>
+
+
+        <a href="{{ url_for('home') }}" class="back-link">
+
+            ← Back to Home
+
+        </a>
+
+
+    </div>
+
+
+</body>
+
+</html>

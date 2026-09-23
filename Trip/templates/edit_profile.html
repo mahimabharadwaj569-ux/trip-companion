@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Profile</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body class="auth-page">
+
+
+    <div class="auth-card edit-card">
+
+
+        <div class="auth-icon">
+            🟡
+        </div>
+
+
+        <h1>
+            Edit Profile
+        </h1>
+
+
+        <p>
+            Update your personal information.
+        </p>
+
+
+        <!-- FLASH MESSAGE -->
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+
+        {% for category, message in messages %}
+
+        <div class="message {{ category }}">
+            {{ message }}
+        </div>
+
+        {% endfor %}
+
+        {% endwith %}
+
+
+        <form method="POST" action="{{ url_for('edit_profile') }}">
+
+
+            <label>
+                👤 Full Name
+            </label>
+
+            <input type="text" name="name" value="{{ user['name'] }}" required>
+
+
+            <label>
+                📧 Email
+            </label>
+
+            <input type="email" value="{{ user['email'] }}" disabled>
+
+
+            <label>
+                📱 Phone Number
+            </label>
+
+            <input type="text" name="phone" value="{{ user['phone'] }}" required>
+
+
+            <label>
+                ❤️ Travel Preference
+            </label>
+
+            <select name="travel_preference" required>
+
+                <option value="Family" {% if user['travel_preference']=='Family' %} selected {% endif %}>
+                    👨‍👩‍👧 Family
+                </option>
+
+
+                <option value="Friends" {% if user['travel_preference']=='Friends' %} selected {% endif %}>
+                    👫 Friends
+                </option>
+
+
+                <option value="Solo" {% if user['travel_preference']=='Solo' %} selected {% endif %}>
+                    🎒 Solo
+                </option>
+
+
+                <option value="Couple" {% if user['travel_preference']=='Couple' %} selected {% endif %}>
+                    💕 Couple
+                </option>
+
+            </select>
+
+
+            <button type="submit" class="btn yellow-btn">
+
+                💾 Save Changes
+
+            </button>
+
+
+        </form>
+
+
+        <a href="{{ url_for('profile') }}" class="back-link">
+
+            ← Back to Profile
+
+        </a>
+
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            ✈️ Trip Companion
+        </div>
+
+        <div class="nav-links">
+
+            <a href="{{ url_for('dashboard') }}">
+                🏠 Dashboard
+            </a>
+
+            <a href="{{ url_for('profile') }}">
+                👤 Profile
+            </a>
+
+            <a href="{{ url_for('logout') }}">
+                🚪 Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- PROFILE -->
+
+    <section class="profile-page">
+
+        <div class="profile-card">
+
+
+            <div class="profile-icon">
+                💗
+            </div>
+
+
+            <h1>
+                {{ user["name"] }}
+            </h1>
+
+
+            <p class="profile-email">
+                {{ user["email"] }}
+            </p>
+
+
+            <div class="profile-information">
+
+
+                <div class="profile-row">
+
+                    <span>
+                        👤 Name
+                    </span>
+
+                    <strong>
+                        {{ user["name"] }}
+                    </strong>
+
+                </div>
+
+
+                <div class="profile-row">
+
+                    <span>
+                        📧 Email
+                    </span>
+
+                    <strong>
+                        {{ user["email"] }}
+                    </strong>
+
+                </div>
+
+
+                <div class="profile-row">
+
+                    <span>
+                        📱 Phone
+                    </span>
+
+                    <strong>
+                        {{ user["phone"] }}
+                    </strong>
+
+                </div>
+
+
+                <div class="profile-row">
+
+                    <span>
+                        ❤️ Travel Preference
+                    </span>
+
+                    <strong>
+                        {{ user["travel_preference"] }}
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- EDIT PROFILE -->
+
+            <a href="{{ url_for('edit_profile') }}" class="btn yellow-btn">
+
+                ✏️ Edit Profile
+
+            </a>
+
+
+            <br><br>
+
+
+            <a href="{{ url_for('dashboard') }}" class="back-link">
+
+                ← Back to Dashboard
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        © 2026 Trip Companion
+
+    </footer>
+
+</body>
+
+</html>

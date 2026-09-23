@@ -1,0 +1,1467 @@
+/* =========================================================
+   ✈️ TRIP COMPANION
+   TOUR TOGETHER & EXPENSE TRACKER APPLICATION
+   COMPLETE STYLE SHEET
+   ========================================================= */
+
+
+/* =========================================================
+   1. BASIC RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   2. BODY
+   ========================================================= */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(135deg,
+            #fff3e0,
+            #e3f2fd,
+            #fce4ec);
+
+    color: #333;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   3. COMMON CONTAINERS
+   ========================================================= */
+
+.dashboard-container,
+.page-container,
+.form-container {
+    width: 92%;
+
+    max-width: 1150px;
+
+    margin: 0 auto;
+
+    padding: 35px 0;
+}
+
+
+/* =========================================================
+   4. DASHBOARD HEADER
+   ========================================================= */
+
+.header {
+    background:
+        linear-gradient(135deg,
+            #ff6f00,
+            #ff9800);
+
+    color: white;
+
+    padding: 32px;
+
+    border-radius: 22px;
+
+    text-align: center;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+.header h1 {
+    font-size: 36px;
+
+    margin-bottom: 10px;
+}
+
+
+.header p {
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   5. WELCOME SECTION
+   ========================================================= */
+
+.welcome {
+    background: white;
+
+    margin-top: 25px;
+
+    padding: 28px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.12);
+
+    text-align: center;
+}
+
+
+.welcome h2 {
+    color: #1565c0;
+
+    font-size: 27px;
+
+    margin-bottom: 12px;
+}
+
+
+.welcome p {
+    color: #555;
+
+    line-height: 1.7;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   6. DASHBOARD FEATURE CARDS
+   ========================================================= */
+
+.features {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 22px;
+
+    margin-top: 30px;
+}
+
+
+.card {
+    min-height: 260px;
+
+    padding: 28px 18px;
+
+    border-radius: 22px;
+
+    color: white;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.16);
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+}
+
+
+.card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 14px 28px rgba(0, 0, 0, 0.22);
+}
+
+
+.card-icon {
+    font-size: 48px;
+
+    margin-bottom: 12px;
+}
+
+
+.card h3 {
+    font-size: 21px;
+
+    margin-bottom: 12px;
+}
+
+
+.card p {
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   7. DIFFERENT DASHBOARD CARD COLOURS
+   ========================================================= */
+
+.profile {
+    background:
+        linear-gradient(135deg,
+            #1565c0,
+            #42a5f5);
+}
+
+
+.karnataka {
+    background:
+        linear-gradient(135deg,
+            #e65100,
+            #ff9800);
+}
+
+
+.trip {
+    background:
+        linear-gradient(135deg,
+            #2e7d32,
+            #66bb6a);
+}
+
+
+.hotel {
+    background:
+        linear-gradient(135deg,
+            #7b1fa2,
+            #ab47bc);
+}
+
+
+.expense {
+    background:
+        linear-gradient(135deg,
+            #c2185b,
+            #ec407a);
+}
+
+
+.transport {
+    background:
+        linear-gradient(135deg,
+            #00695c,
+            #26a69a);
+}
+
+
+.history {
+    background:
+        linear-gradient(135deg,
+            #4527a0,
+            #7e57c2);
+}
+
+
+.budget-card {
+    background:
+        linear-gradient(135deg,
+            #d84315,
+            #ff7043);
+}
+
+
+/* =========================================================
+   8. DASHBOARD CARD BUTTONS
+   ========================================================= */
+
+.card a {
+    display: inline-block;
+
+    padding: 11px 20px;
+
+    background: white;
+
+    color: #333;
+
+    text-decoration: none;
+
+    border-radius: 12px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+.card a:hover {
+    background: #212121;
+
+    color: white;
+
+    transform: scale(1.06);
+}
+
+
+/* =========================================================
+   9. LOGOUT
+   ========================================================= */
+
+.logout-section {
+    margin-top: 35px;
+
+    text-align: center;
+}
+
+
+.logout-btn {
+    display: inline-block;
+
+    padding: 14px 35px;
+
+    background:
+        linear-gradient(135deg,
+            #c62828,
+            #ef5350);
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 14px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 6px 15px rgba(0, 0, 0, 0.18);
+
+    transition: 0.3s;
+}
+
+
+.logout-btn:hover {
+    background: #8e0000;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   10. COMMON PAGE HEADER
+   ========================================================= */
+
+.page-header {
+    padding: 32px;
+
+    color: white;
+
+    border-radius: 22px;
+
+    margin-bottom: 30px;
+
+    box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+
+.page-header h1 {
+    font-size: 32px;
+
+    margin-bottom: 10px;
+}
+
+
+.page-header p {
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   11. PAGE HEADER COLOURS
+   ========================================================= */
+
+.orange {
+    background:
+        linear-gradient(135deg,
+            #ef6c00,
+            #ffb300);
+}
+
+
+.blue {
+    background:
+        linear-gradient(135deg,
+            #1565c0,
+            #42a5f5);
+}
+
+
+.green {
+    background:
+        linear-gradient(135deg,
+            #2e7d32,
+            #66bb6a);
+}
+
+
+.pink {
+    background:
+        linear-gradient(135deg,
+            #c2185b,
+            #ec407a);
+}
+
+
+.purple {
+    background:
+        linear-gradient(135deg,
+            #6a1b9a,
+            #ab47bc);
+}
+
+
+.cyan {
+    background:
+        linear-gradient(135deg,
+            #00695c,
+            #26a69a);
+}
+
+
+/* =========================================================
+   12. KARNATAKA EXPLORER
+   ========================================================= */
+
+.explorer-card {
+    background: white;
+
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    padding: 45px 30px;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.13);
+}
+
+
+.explorer-card h2 {
+    color: #e65100;
+
+    font-size: 28px;
+
+    margin: 18px 0 12px;
+}
+
+
+.explorer-card p {
+    color: #555;
+
+    line-height: 1.7;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   13. BIG EMOJIS
+   ========================================================= */
+
+.big-icon {
+    font-size: 55px;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   14. DISTRICT GRID
+   ========================================================= */
+
+.district-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+
+    margin-top: 20px;
+}
+
+
+/* DISTRICT + TALUK CARDS */
+
+.district-card,
+.taluk-card {
+    background: white;
+
+    min-height: 90px;
+
+    padding: 22px 15px;
+
+    border-radius: 17px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    color: #1565c0;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    font-size: 16px;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.10);
+
+    transition: 0.3s;
+}
+
+
+.district-card:hover,
+.taluk-card:hover {
+    background: #e3f2fd;
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 20px rgba(0, 0, 0, 0.16);
+}
+
+
+/* =========================================================
+   15. FAMOUS PLACES
+   ========================================================= */
+
+.place-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.place-card {
+    background: white;
+
+    padding: 30px 20px;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 7px 18px rgba(0, 0, 0, 0.12);
+
+    transition: 0.3s;
+}
+
+
+.place-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.18);
+}
+
+
+.place-card h2 {
+    color: #c2185b;
+
+    margin: 15px 0;
+}
+
+
+.place-card p {
+    color: #555;
+
+    line-height: 1.6;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   16. PLACE DETAILS
+   ========================================================= */
+
+.place-detail {
+    max-width: 750px;
+
+    margin: 0 auto;
+
+    padding: 40px;
+
+    background: white;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.13);
+}
+
+
+.place-detail h1 {
+    color: #e65100;
+
+    font-size: 30px;
+
+    margin: 18px 0;
+}
+
+
+.place-detail h2 {
+    color: #1565c0;
+
+    margin-top: 25px;
+
+    margin-bottom: 10px;
+}
+
+
+.place-detail p {
+    color: #555;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   17. COMMON BUTTONS
+   ========================================================= */
+
+.main-btn {
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    margin-top: 15px;
+
+    transition: 0.3s;
+}
+
+
+.main-btn:hover {
+    transform: translateY(-3px);
+
+    opacity: 0.9;
+
+    box-shadow:
+        0 6px 15px rgba(0, 0, 0, 0.18);
+}
+
+
+/* BUTTON COLOURS */
+
+.orange-btn {
+    background: #ef6c00;
+}
+
+
+.green-btn {
+    background: #2e7d32;
+}
+
+
+.pink-btn {
+    background: #c2185b;
+}
+
+
+.purple-btn {
+    background: #7b1fa2;
+}
+
+
+/* =========================================================
+   18. BACK BUTTON
+   ========================================================= */
+
+.back-btn {
+    display: inline-block;
+
+    margin-top: 30px;
+
+    padding: 12px 25px;
+
+    background: #37474f;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 12px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+.back-btn:hover {
+    background: #263238;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   19. FORM CONTAINER
+   ========================================================= */
+
+.form-container {
+    max-width: 700px;
+}
+
+
+/* =========================================================
+   20. FORM
+   ========================================================= */
+
+.travel-form {
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.13);
+}
+
+
+.travel-form label {
+    display: block;
+
+    text-align: left;
+
+    color: #444;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    margin-top: 18px;
+
+    margin-bottom: 7px;
+}
+
+
+.travel-form input,
+.travel-form select {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 2px solid #ddd;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    background: #fafafa;
+
+    outline: none;
+}
+
+
+.travel-form input:focus,
+.travel-form select:focus {
+    border-color: #ff9800;
+
+    background: white;
+
+    box-shadow:
+        0 0 5px rgba(255, 152, 0, 0.25);
+}
+
+
+/* =========================================================
+   21. HOTEL CARDS
+   ========================================================= */
+
+.hotel-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.hotel-card {
+    background: white;
+
+    padding: 30px 20px;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 7px 18px rgba(0, 0, 0, 0.12);
+
+    transition: 0.3s;
+}
+
+
+.hotel-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.18);
+}
+
+
+.hotel-card h2 {
+    color: #7b1fa2;
+
+    margin: 15px 0;
+}
+
+
+.hotel-card p {
+    color: #666;
+
+    margin: 9px 0;
+}
+
+
+.hotel-card h3 {
+    color: #2e7d32;
+
+    font-size: 21px;
+
+    margin: 15px 0;
+}
+
+
+/* =========================================================
+   22. TRANSPORT
+   ========================================================= */
+
+.transport-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.transport-card {
+    color: white;
+
+    padding: 32px 18px;
+
+    border-radius: 22px;
+
+    min-height: 220px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.15);
+
+    transition: 0.3s;
+}
+
+
+.transport-card:hover {
+    transform: translateY(-7px);
+}
+
+
+.transport-card h2 {
+    margin: 15px 0;
+}
+
+
+.transport-card p {
+    line-height: 1.6;
+}
+
+
+/* TRANSPORT COLOURS */
+
+.bus {
+    background:
+        linear-gradient(135deg,
+            #1565c0,
+            #42a5f5);
+}
+
+
+.train {
+    background:
+        linear-gradient(135deg,
+            #00695c,
+            #26a69a);
+}
+
+
+.flight {
+    background:
+        linear-gradient(135deg,
+            #6a1b9a,
+            #ab47bc);
+}
+
+
+.car {
+    background:
+        linear-gradient(135deg,
+            #e65100,
+            #ff9800);
+}
+
+
+/* =========================================================
+   23. EXPENSE TRACKER
+   ========================================================= */
+
+.total-box {
+    background:
+        linear-gradient(135deg,
+            #fff3e0,
+            #ffe0b2);
+
+    margin-top: 25px;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    color: #e65100;
+
+    font-size: 20px;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+.total-box strong {
+    display: block;
+
+    font-size: 35px;
+
+    margin-top: 10px;
+}
+
+
+.expense-list {
+    margin-top: 25px;
+}
+
+
+.expense-item {
+    background: white;
+
+    padding: 18px;
+
+    margin-bottom: 12px;
+
+    border-radius: 14px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.10);
+}
+
+
+.expense-item strong {
+    color: #c2185b;
+}
+
+
+.expense-item b {
+    color: #2e7d32;
+}
+
+
+/* =========================================================
+   24. BUDGET MANAGEMENT
+   ========================================================= */
+
+.budget-card-main {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    padding: 45px 30px;
+
+    background: white;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.13);
+}
+
+
+.budget-card-main h2 {
+    color: #e65100;
+
+    margin: 15px 0;
+}
+
+
+.amount {
+    color: #2e7d32;
+
+    font-size: 42px;
+
+    font-weight: bold;
+
+    margin: 20px 0;
+}
+
+
+.budget-card-main p {
+    color: #666;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   25. TRIP HISTORY
+   ========================================================= */
+
+.history-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+
+.history-card {
+    background: white;
+
+    padding: 28px 20px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 6px 16px rgba(0, 0, 0, 0.12);
+
+    transition: 0.3s;
+}
+
+
+.history-card:hover {
+    transform: translateY(-5px);
+}
+
+
+.history-card h2 {
+    color: #6a1b9a;
+
+    margin: 12px 0;
+}
+
+
+.history-card p {
+    color: #555;
+
+    margin: 9px 0;
+}
+
+
+.empty-box {
+    background: white;
+
+    max-width: 600px;
+
+    margin: auto;
+
+    padding: 45px 25px;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   26. AUTHENTICATION PAGES
+   LOGIN / REGISTER / FORGOT / RESET
+   ========================================================= */
+
+.auth-page {
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 25px;
+}
+
+
+.auth-card {
+    width: 100%;
+
+    max-width: 500px;
+
+    background: white;
+
+    padding: 40px 35px;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.15);
+
+    text-align: center;
+}
+
+
+.auth-icon {
+    font-size: 55px;
+
+    margin-bottom: 15px;
+}
+
+
+.auth-card h1 {
+    color: #e65100;
+
+    margin-bottom: 10px;
+}
+
+
+.auth-card>p {
+    color: #666;
+
+    margin-bottom: 20px;
+}
+
+
+.auth-card form {
+    text-align: left;
+}
+
+
+.auth-card label {
+    display: block;
+
+    margin-top: 15px;
+
+    margin-bottom: 7px;
+
+    font-weight: bold;
+
+    color: #444;
+}
+
+
+.auth-card input,
+.auth-card select {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 2px solid #ddd;
+
+    border-radius: 10px;
+
+    outline: none;
+}
+
+
+.auth-card input:focus,
+.auth-card select:focus {
+    border-color: #ff9800;
+}
+
+
+/* LOGIN BUTTON */
+
+.blue-btn {
+    width: 100%;
+
+    border: none;
+
+    background:
+        linear-gradient(135deg,
+            #1565c0,
+            #42a5f5);
+
+    color: white;
+
+    padding: 14px;
+
+    border-radius: 12px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    margin-top: 20px;
+}
+
+
+/* FORGOT PASSWORD */
+
+.forgot-area {
+    text-align: right;
+
+    margin-top: 10px;
+}
+
+
+.forgot-area a {
+    color: #1565c0;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+
+/* BOTTOM TEXT */
+
+.bottom-text {
+    margin-top: 20px;
+}
+
+
+.bottom-text a {
+    color: #e65100;
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+
+/* BACK LINK */
+
+.back-link {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    color: #555;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   27. FLASH MESSAGES
+   ========================================================= */
+
+.message {
+    padding: 12px;
+
+    margin: 15px 0;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+}
+
+
+.message.success {
+    background: #e8f5e9;
+
+    color: #2e7d32;
+
+    border: 1px solid #81c784;
+}
+
+
+.message.error {
+    background: #ffebee;
+
+    color: #c62828;
+
+    border: 1px solid #ef9a9a;
+}
+
+
+/* =========================================================
+   28. RESPONSIVE DESIGN
+   ========================================================= */
+
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+
+    .features {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .district-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .place-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .hotel-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .transport-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .history-list {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .dashboard-container,
+    .page-container,
+    .form-container {
+        width: 94%;
+
+        padding: 20px 0;
+    }
+
+
+    .header {
+        padding: 25px 15px;
+    }
+
+
+    .header h1 {
+        font-size: 28px;
+    }
+
+
+    .header p {
+        font-size: 15px;
+    }
+
+
+    .page-header {
+        padding: 25px 15px;
+    }
+
+
+    .page-header h1 {
+        font-size: 26px;
+    }
+
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+
+    .district-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .place-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .hotel-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .transport-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .history-list {
+        grid-template-columns: 1fr;
+    }
+
+
+    .place-detail {
+        padding: 30px 20px;
+    }
+
+
+    .travel-form {
+        padding: 25px 18px;
+    }
+
+
+    .expense-item {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+
+    .auth-card {
+        padding: 30px 20px;
+    }
+
+}

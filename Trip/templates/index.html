@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+
+    <meta charset="UTF-8">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>
+
+        Trip Companion
+
+    </title>
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+    <style>
+        body {
+
+            margin: 0;
+
+            padding: 0;
+
+            min-height: 100vh;
+
+
+            background:
+
+                linear-gradient(rgba(0, 0, 0, 0.45),
+
+                    rgba(0, 0, 0, 0.45)),
+
+                url("https://images.unsplash.com/photo-1526772662000-3f88f10405ff");
+
+
+            background-size: cover;
+
+            background-position: center;
+
+            background-repeat: no-repeat;
+
+
+            font-family: Arial, sans-serif;
+
+
+            color: white;
+
+        }
+
+
+        /* NAVIGATION */
+
+
+        .navbar {
+
+            width: 100%;
+
+            padding: 20px 40px;
+
+            box-sizing: border-box;
+
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+
+            background: rgba(0, 0, 0, 0.55);
+
+        }
+
+
+        .logo {
+
+            font-size: 24px;
+
+            font-weight: bold;
+
+        }
+
+
+        .nav-links {
+
+            display: flex;
+
+            gap: 25px;
+
+        }
+
+
+        .nav-links a {
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+        }
+
+
+        .nav-links a:hover {
+
+            color: #ffd166;
+
+        }
+
+
+        /* HERO */
+
+
+        .home-section {
+
+            min-height: calc(100vh - 80px);
+
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+
+            text-align: center;
+
+
+            padding: 40px 20px;
+
+            box-sizing: border-box;
+
+        }
+
+
+        .home-card {
+
+            width: 600px;
+
+            max-width: 90%;
+
+            padding: 45px;
+
+
+            box-sizing: border-box;
+
+
+            background: rgba(255, 255, 255, 0.92);
+
+            color: #222;
+
+
+            border-radius: 20px;
+
+
+            box-shadow:
+
+                0 10px 35px rgba(0, 0, 0, 0.4);
+
+        }
+
+
+        .big-icon {
+
+            font-size: 70px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        h1 {
+
+            margin: 10px 0;
+
+            font-size: 42px;
+
+        }
+
+
+        h2 {
+
+            margin: 10px 0 20px;
+
+            font-size: 22px;
+
+            color: #555;
+
+        }
+
+
+        .home-card p {
+
+            font-size: 17px;
+
+            line-height: 1.7;
+
+            color: #555;
+
+        }
+
+
+        /* BUTTONS */
+
+
+        .home-buttons {
+
+            margin-top: 30px;
+
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        .btn {
+
+            display: inline-block;
+
+
+            padding: 13px 25px;
+
+
+            border-radius: 8px;
+
+
+            text-decoration: none;
+
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+
+            transition: 0.3s;
+
+        }
+
+
+        .orange-btn {
+
+            background-color: #ff9800;
+
+            color: white;
+
+        }
+
+
+        .orange-btn:hover {
+
+            background-color: #e68900;
+
+        }
+
+
+        .blue-btn {
+
+            background-color: #007bff;
+
+            color: white;
+
+        }
+
+
+        .blue-btn:hover {
+
+            background-color: #0056b3;
+
+        }
+
+
+        /* FOOTER */
+
+
+        footer {
+
+            text-align: center;
+
+
+            padding: 15px;
+
+
+            background: rgba(0, 0, 0, 0.55);
+
+
+            font-size: 14px;
+
+        }
+
+
+        /* MOBILE */
+
+
+        @media (max-width: 600px) {
+
+
+            .navbar {
+
+                flex-direction: column;
+
+                gap: 15px;
+
+                padding: 15px;
+
+            }
+
+
+            .nav-links {
+
+                gap: 15px;
+
+            }
+
+
+            .home-card {
+
+                padding: 30px 20px;
+
+            }
+
+
+            h1 {
+
+                font-size: 32px;
+
+            }
+
+
+            h2 {
+
+                font-size: 18px;
+
+            }
+
+
+            .big-icon {
+
+                font-size: 55px;
+
+            }
+
+
+        }
+    </style>
+
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+
+    <nav class="navbar">
+
+
+        <div class="logo">
+
+            ✈️ Trip Companion
+
+        </div>
+
+
+        <div class="nav-links">
+
+
+            <a href="{{ url_for('home') }}">
+
+                Home
+
+            </a>
+
+
+            <a href="{{ url_for('login') }}">
+
+                Login
+
+            </a>
+
+
+            <a href="{{ url_for('register') }}">
+
+                Register
+
+            </a>
+
+
+        </div>
+
+
+    </nav>
+
+
+    <!-- HERO -->
+
+
+    <section class="home-section">
+
+
+        <div class="home-card">
+
+
+            <div class="big-icon">
+
+                ✈️
+
+            </div>
+
+
+            <h1>
+
+                Trip Companion
+
+            </h1>
+
+
+            <h2>
+
+                Tour Together & Expense Tracker
+
+            </h2>
+
+
+            <p>
+
+                Plan your journey,
+
+                explore beautiful destinations,
+
+                manage your travel activities
+
+                and enjoy a smarter
+
+                travel experience.
+
+            </p>
+
+
+            <div class="home-buttons">
+
+
+                <a href="{{ url_for('register') }}" class="btn orange-btn">
+
+                    ✨ Create Account
+
+                </a>
+
+
+                <a href="{{ url_for('login') }}" class="btn blue-btn">
+
+                    🔐 Login
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+    <footer>
+
+
+        © 2026 Trip Companion
+
+
+    </footer>
+
+
+</body>
+
+
+</html>
